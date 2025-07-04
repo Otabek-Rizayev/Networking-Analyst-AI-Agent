@@ -6,7 +6,7 @@ from sentence_transformers import SentenceTransformer, util
 # Model va profiling embeddinglarini yuklash
 @st.cache_resource
 def load_data():
-    with open("profiles.pkl", "rb") as f:
+    with open("model.pkl", "rb") as f:
         data = pickle.load(f)
     model = SentenceTransformer("all-MiniLM-L6-v2")
     return data["profiles"], data["embeddings"], model
@@ -16,7 +16,7 @@ profiles, profile_embeddings, model = load_data()
 st.title("LinkedIn Profil Tavsiya Dasturi")
 
 # Foydalanuvchi input formasi
-user_about = st.text_area("About", "")
+user_about = st.text_area("About Me", "")
 user_experience = st.text_area("Experience", "")
 user_skills = st.text_area("Skills", "")
 user_interests = st.text_area("Headline", "")
