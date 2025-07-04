@@ -3,4 +3,3 @@ sentence_transformers
 datasets
 numpy
 pandas
-pickle
