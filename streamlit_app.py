@@ -19,7 +19,7 @@ def load_data():
 
 profiles, profile_embeddings, model = load_data()
 
-st.title("LinkedIn Profil Tavsiya Dasturi")
+st.title("NETWORKING ANALYST")
 
 # Foydalanuvchi input formasi
 user_about = st.text_area("ABOUT", "")
