@@ -13,17 +13,11 @@ st.title("Networking uchun do'st topuvchi AI-Agent")
 
 # Model va profiling embeddinglarini yuklash
 #@st.cache_resource
-assert os.path.exists("model.pkl"), "model.pkl topilmadi!"
-
-with open("model.pkl", "rb") as f:
-    data = pickle.load(f)
-
-print(type(data))
 def load_data():
     with open("model.pkl", "rb") as f:
         data = pickle.load(f)
     model = SentenceTransformer("all-MiniLM-L6-v2")
-    return data["profiles"], data["embeddings"], model
+    return data["dataset"], data["embeddings"], model
 
 profiles, profile_embeddings, model = load_data()
 
