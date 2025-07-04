@@ -9,8 +9,6 @@ import os
 plt = platform.system()
 if plt == 'Linux': pathlib.WindowsPath = pathlib.PosixPath
 
-st.title("Networking uchun do'st topuvchi AI-Agent")
-
 # Model va profiling embeddinglarini yuklash
 #@st.cache_resource
 def load_data():
@@ -29,7 +27,7 @@ user_experience = st.text_area("Experience", "")
 user_skills = st.text_area("Skills", "")
 user_interests = st.text_area("Headline", "")
 
-if st.button("Eng mos 5 ta profilni topish"):
+if st.button("Deep Research 🔬 🔭"):
     user_text = f"{user_about} {user_experience} {user_skills} {user_interests}"
     if not user_text.strip():
         st.warning("Iltimos, barcha maydonlarni to'ldiring.")
