@@ -1,6 +1,7 @@
 from datasets import load_dataset
 from sentence_transformers import SentenceTransformer, util
 import numpy as np
+import pickle
 
 # 1. Datasetni yuklash
 dataset = load_dataset("ilsilfverskiold/linkedin_profiles_synthetic", split="train")
