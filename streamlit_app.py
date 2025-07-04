@@ -11,7 +11,7 @@ if plt == 'Linux': pathlib.WindowsPath = pathlib.PosixPath
 st.title("Networking uchun do'st topuvchi AI-Agent")
 
 # Model va profiling embeddinglarini yuklash
-@st.cache_resource
+#@st.cache_resource
 def load_data():
     with open("model.pkl", "rb") as f:
         data = pickle.load(f)
