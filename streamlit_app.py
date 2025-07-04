@@ -2,6 +2,13 @@ import streamlit as st
 import pickle
 import numpy as np
 from sentence_transformers import SentenceTransformer, util
+import platform
+import pathlib
+
+plt = platform.system()
+if plt == 'Linux': pathlib.WindowsPath = pathlib.PosixPath
+
+st.title("Networking uchun do'st topuvchi AI-Agent")
 
 # Model va profiling embeddinglarini yuklash
 @st.cache_resource
