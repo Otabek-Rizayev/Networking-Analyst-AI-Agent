@@ -22,12 +22,12 @@ profiles, profile_embeddings, model = load_data()
 st.title("LinkedIn Profil Tavsiya Dasturi")
 
 # Foydalanuvchi input formasi
-user_about = st.text_area("About Me", "")
-user_experience = st.text_area("Experience", "")
-user_skills = st.text_area("Skills", "")
-user_interests = st.text_area("Headline", "")
+user_about = st.text_area("About", "Tasvirlab bering")
+user_experience = st.text_area("Experience", "Tajribalar")
+user_skills = st.text_area("Skills", "Qobiliyatlar")
+user_interests = st.text_area("Headline", "Hozirgi lavozim, soha, ko`nikmalari")
 
-if st.button("Deep Research 🔬 🔭"):
+if st.button("Deep Research 🔭"):
     user_text = f"{user_about} {user_experience} {user_skills} {user_interests}"
     if not user_text.strip():
         st.warning("Iltimos, barcha maydonlarni to'ldiring.")
@@ -40,9 +40,9 @@ if st.button("Deep Research 🔬 🔭"):
         st.markdown("### Eng mos profillar:")
         for idx in top_idx:
             st.markdown("---")
-            st.markdown(f"**Name:** {profiles[idx]['FirstName']} {profiles[idx]['LastName']}")
-            st.markdown(f"**About:** {profiles[idx]['About Me']}")
-            st.markdown(f"**Experience:** {profiles[idx]['Experience']}")
-            st.markdown(f"**Skills:** {profiles[idx]['Skills']}")
-            st.markdown(f"**Headline:** {profiles[idx]['Headline']}")
-            st.markdown(f"**Moslik balli:** {cos_scores[idx]:.2f}")
+            st.markdown(f"**MOSLIK EHTIMOLLIGI:** {cos_scores[idx]:.2f}")
+            st.markdown(f"**NAME:** {profiles[idx]['FirstName']} {profiles[idx]['LastName']}")
+            st.markdown(f"**ABOUT:** {profiles[idx]['About Me']}")
+            st.markdown(f"**EXPERIENCE:** {profiles[idx]['Experience']}")
+            st.markdown(f"**SKILLS:** {profiles[idx]['Skills']}")
+            st.markdown(f"**HEADLINE:** {profiles[idx]['Headline']}")
