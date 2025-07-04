@@ -22,15 +22,15 @@ profiles, profile_embeddings, model = load_data()
 st.title("LinkedIn Profil Tavsiya Dasturi")
 
 # Foydalanuvchi input formasi
-user_about = st.text_area("About", "Tasvirlab bering")
-user_experience = st.text_area("Experience", "Tajribalar")
-user_skills = st.text_area("Skills", "Qobiliyatlar")
-user_interests = st.text_area("Headline", "Hozirgi lavozim, soha, ko`nikmalari")
+user_about = st.text_area("ABOUT", "")
+user_experience = st.text_area("EXPERIENCE", "")
+user_skills = st.text_area("SKILLS", "")
+user_interests = st.text_area("HEADLINE", "")
 
-if st.button("Deep Research 🔭"):
+if st.button("DEEP RESEARCH 🔭"):
     user_text = f"{user_about} {user_experience} {user_skills} {user_interests}"
     if not user_text.strip():
-        st.warning("Iltimos, barcha maydonlarni to'ldiring.")
+        st.warning("Iltimos, barcha maydonlarni to'ldiring!")
     else:
         user_embedding = model.encode(user_text, convert_to_numpy=True)
         cos_scores = np.dot(profile_embeddings, user_embedding) / (
