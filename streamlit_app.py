@@ -4,6 +4,7 @@ import numpy as np
 from sentence_transformers import SentenceTransformer, util
 import platform
 import pathlib
+import os
 
 plt = platform.system()
 if plt == 'Linux': pathlib.WindowsPath = pathlib.PosixPath
@@ -12,6 +13,12 @@ st.title("Networking uchun do'st topuvchi AI-Agent")
 
 # Model va profiling embeddinglarini yuklash
 #@st.cache_resource
+assert os.path.exists("model.pkl"), "model.pkl topilmadi!"
+
+with open("model.pkl", "rb") as f:
+    data = pickle.load(f)
+
+print(type(data))
 def load_data():
     with open("model.pkl", "rb") as f:
         data = pickle.load(f)
