@@ -22,13 +22,10 @@ profiles, profile_embeddings, model = load_data()
 st.title("NETWORKING ANALYST")
 
 # Foydalanuvchi input formasi
-user_about = st.text_area("ABOUT", "Creative digital marketer with a track record of boosting web traffic and customer engagement through data-driven strategies. Strong believer in agile experimentation and ROI-focused campaigns.)
-user_experience = st.text_area("EXPERIENCE", "● Marketing Manager at Bloomly (2020–2024): Increased website traffic by 120% via SEO optimization and PPC.
-● Content Strategist at GreenBuzz (2017–2020): Planned and executed email campaigns that tripled open rates.
-● Certified in Google Ads, HubSpot Inbound Marketing.")
-user_skills = st.text_area("SKILLS", "SEO, SEM, Google Analytics, Meta Ads, Google Ads, A/B Testing, Copywriting, Content Strategy
-")
-user_interests = st.text_area("HEADLINE", "Digital Marketing Specialist | SEO & Growth Strategy | 3x ROI Achiever")
+user_about = st.text_area("ABOUT", "")
+user_experience = st.text_area("EXPERIENCE", "")
+user_skills = st.text_area("SKILLS", "")
+user_interests = st.text_area("HEADLINE", "")
 
 if st.button("DEEP RESEARCH 🔭"):
     user_text = f"{user_about} {user_experience} {user_skills} {user_interests}"
